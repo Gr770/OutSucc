@@ -1,0 +1,42 @@
+namespace = outremsucc
+
+outremsucc.001 = {
+	hidden = yes
+	immediate = {
+		save_scope_as = effect_root
+		if = {
+			limit = {
+				any_child = {
+					is_alive = yes
+				}
+			}
+			ordered_child = {
+				limit = { is_alive = yes }
+				order_by = age
+				position = 0
+				save_scope_as = PbB_heir
+			}
+		}
+		else_if = {
+			limit = {
+				father = {
+					any_child = {
+						is_alive = yes
+					}
+				}
+			}
+			father = {
+				ordered_child = {
+		else_if = {
+			limit = {
+				father = {
+					is_alive = yes
+				}
+			}
+			father = {
+				save_scope_as = PbB_heir
+			}
+		}
+		else = {
+			father = {
+				save_scope_as = next check
